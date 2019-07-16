@@ -4,7 +4,7 @@
 SASS=`which sass || which sassc || which pysassc`
 for scss in {{ cookiecutter.css_path }}/*.scss; do
     css=${scss/.scss/.css}
-    $SASS -t expanded $scss $css
+    $SASS -s expanded $scss $css
     git add $css
 done
 git commit -m "Add compiled CSS"
